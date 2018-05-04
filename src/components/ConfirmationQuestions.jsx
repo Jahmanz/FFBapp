@@ -9,7 +9,7 @@ function ConfirmationQuestions(props){
           background-color: #e0b18b;
         }
         `}</style>
-      <p>Sure you want to add a info-notes?</p>
+      <p>Like to add player to draft list?</p>
       <button onClick={props.onTroubleshootingConfirmation}>Yes</button>
     </div>
   );

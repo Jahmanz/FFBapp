@@ -10,24 +10,24 @@ function PlayerList(props){
           background-color: #e0b18b;
         }
         `}</style>
-        <hr/>
-        {Object.keys(props.playerList).map(function(playerId) {
-          var player = props.playerList[playerId];
-          return <Player names={player.names}
-            team={player.team}
-            info-notes={player.info-notes}
-            formattedWaitTime={player.formattedWaitTime}
-            currentRouterPath={props.currentRouterPath}
-            key={playerId}
-            playerId={playerId} />;
-        })}
-      </div>
-    );
-  }
+      <hr/>
+      {Object.keys(props.playerList).map(function(playerId) {
+        var player = props.playerList[playerId];
+        return <Player names={player.names}
+          team={player.team}
+          info={player.info}
+          formattedWaitTime={player.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
+          key={playerId}
+          playerId={playerId} />;
+      })}
+    </div>
+  );
+}
 
-  PlayerList.propTypes = {
-    playerList: PropTypes.object,
-    currentRouterPath: PropTypes.string
-  };
+PlayerList.propTypes = {
+  playerList: PropTypes.object,
+  currentRouterPath: PropTypes.string
+};
 
-  export default PlayerList;
+export default PlayerList;

@@ -74,7 +74,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Chore Manager ',
+      title: 'Fantasy Football Tool ',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]

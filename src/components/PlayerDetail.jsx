@@ -7,7 +7,7 @@ function PlayerDetail(props){
       <hr/>
       <h1>{props.selectedPlayer.names} - {props.selectedPlayer.team}</h1>
       <h2>Submitted {props.selectedPlayer.formattedWaitTime} ago</h2>
-      <h4><em>{props.selectedPlayer.info-notes}</em></h4>
+      <h4><em>{props.selectedPlayer.info}</em></h4>
       <hr/>
     </div>
   );

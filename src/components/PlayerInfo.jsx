@@ -11,7 +11,7 @@ function PlayerInfo(props){
   }
   return (
     <div>
-      <h2>Edit Player</h2>
+      <h2>Player Info</h2>
       {optionalSelectedPlayerContent}
       <PlayerList
         playerList={props.playerList}

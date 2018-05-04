@@ -7,24 +7,24 @@ import { v4 } from 'uuid';
 function NewPlayerForm(props){
   let _names = null;
   let _team = null;
-  let _info-notes = null;
+  let _info = null;
 
   function handleNewPlayerFormSubmission(event) {
     const { dispatch } = props;
     event.preventDefault();
     const action = {
-      type: 'ADD_TASK',
+      type: 'ADD_PLAYER',
       id: v4(),
 
       names: _names.value,
       team: _team.value,
-      info-notes: _info-notes.value,
+      info: _info.value,
       timeOpen: new Moment()
     };
     dispatch(action);
     _names.value = '';
     _team.value = '';
-    _info-notes.value = '';
+    _info.value = '';
   }
 
   return (
@@ -33,17 +33,17 @@ function NewPlayerForm(props){
         <input
           type='text'
           id='names'
-          placeholder='Name'
+          placeholder='Player Name'
           ref={(input) => {_names = input;}}/>
         <input
           type='text'
           id='team'
-          placeholder='Area for info-notes'
+          placeholder='Team'
           ref={(input) => {_team = input;}}/>
-        <textteam
-          id='info-notes'
-          placeholder='Describe your info-notes.'
-          ref={(textteam) => {_info-notes = textteam;}}/>
+        <textarea
+          id='info'
+          placeholder='Daft Notes/Info.'
+          ref={(textarea) => {_info = textarea;}}/>
         <button type='submit'>Add Player!</button>
       </form>
     </div>

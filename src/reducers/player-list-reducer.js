@@ -1,12 +1,12 @@
 export default (state = {}, action) => {
   switch (action.type) {
-  case 'ADD_TASK':
-    const { names, team, info-notes, timeOpen, id } = action;
+  case 'ADD_PLAYER':
+    const { names, team, info, timeOpen, id } = action;
     let newState = Object.assign({}, state, {
       [id]: {
         names: names,
         team: team,
-        info-notes: info-notes,
+        info: info,
         timeOpen: timeOpen,
         id: id
       }
