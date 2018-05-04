@@ -2,13 +2,15 @@ import Moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import c from './../constants';
+
 
 function Player(props){
 
   function handleSavingSelectedPlayer(playerId){
     const { dispatch } = props;
     const action = {
-      type: 'SELECT_PLAYER',
+      type: c.SELECT_PLAYER,
       playerId: playerId
     };
     dispatch(action);

@@ -2,6 +2,8 @@ import React from 'react';
 import Moment from 'moment';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
+import c from './../constants';
+
 
 
 function NewPlayerForm(props){
@@ -13,13 +15,13 @@ function NewPlayerForm(props){
     const { dispatch } = props;
     event.preventDefault();
     const action = {
-      type: 'ADD_PLAYER',
+      type: c.ADD_PLAYER,
       id: v4(),
-
       names: _names.value,
       team: _team.value,
-      info: _info.value,
-      timeOpen: new Moment()
+      info: _issue.value,
+      timeOpen: new Moment(),
+      formattedWaitTime: new Moment().fromNow(true)
     };
     dispatch(action);
     _names.value = '';

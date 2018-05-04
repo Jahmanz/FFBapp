@@ -15,7 +15,6 @@ function PlayerList(props){
         var player = props.playerList[playerId];
         return <Player names={player.names}
           team={player.team}
-          info={player.info}
           formattedWaitTime={player.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
           key={playerId}

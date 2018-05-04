@@ -22,12 +22,18 @@ class App extends React.Component {
   }
 
   updatePlayerElapsedWaitTime() {
-    // var newMasterPlayerList = Object.assign({}, this.state.masterPlayerList);
-    // Object.keys(newMasterPlayerList).forEach(playerId => {
-    //   newMasterPlayerList[playerId].formattedWaitTime = (newMasterPlayerList[playerId].timeOpen).fromNow(true);
-    // });
-    // this.setState({masterPlayerList: newMasterPlayerList});
-  }
+  const { dispatch } = this.props;
+  Object.keys(this.props.masterPlayerList).map(playerId => {
+    const player = this.props.masterPlayerList[playerId];
+    const newFormattedWaitTime = player.timeOpen.fromNow(true);
+    const action = {
+      type: 'UPDATE_TIME',
+      id: playerId,
+      formattedWaitTime: newFormattedWaitTime
+    };
+    dispatch(action);
+  });
+}
 
   render(){
     return (
