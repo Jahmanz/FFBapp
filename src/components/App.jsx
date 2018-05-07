@@ -7,6 +7,8 @@ import Moment from 'moment';
 import PlayerInfo from './PlayerInfo';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import c from './../constants';
+
 
 class App extends React.Component {
 
@@ -22,18 +24,18 @@ class App extends React.Component {
   }
 
   updatePlayerElapsedWaitTime() {
-  const { dispatch } = this.props;
-  Object.keys(this.props.masterPlayerList).map(playerId => {
-    const player = this.props.masterPlayerList[playerId];
-    const newFormattedWaitTime = player.timeOpen.fromNow(true);
-    const action = {
-      type: 'UPDATE_TIME',
-      id: playerId,
-      formattedWaitTime: newFormattedWaitTime
-    };
-    dispatch(action);
-  });
-}
+    const { dispatch } = this.props;
+    Object.keys(this.props.masterPlayerList).map(playerId => {
+      const player = this.props.masterPlayerList[playerId];
+      const newFormattedWaitTime = player.timeOpen.fromNow(true);
+      const action = {
+        type: c.UPDATE_TIME,
+        id: playerId,
+        formattedWaitTime: newFormattedWaitTime
+      };
+      dispatch(action);
+    });
+  }
 
   render(){
     return (

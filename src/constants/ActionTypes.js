@@ -1,3 +1,3 @@
-export const ADD_TICKET = "ADD_TICKET";
+export const ADD_PLAYER = "ADD_PLAYER";
 export const UPDATE_TIME = "UPDATE_TIME";
-export const SELECT_TICKET = "SELECT_TICKET";
+export const SELECT_PLAYER = "SELECT_PLAYER";
